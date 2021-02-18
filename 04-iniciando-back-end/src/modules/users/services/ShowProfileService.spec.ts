@@ -6,7 +6,7 @@ import ShowProfileService from './ShowProfileService';
 let fakeUsersRepository: FakeUsersRepository;
 let showProfile: ShowProfileService;
 
-describe('UpdateProfile', () => {
+describe('ShowProfile', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
 
@@ -29,7 +29,7 @@ describe('UpdateProfile', () => {
   });
 
   it('should not be able show the profile from non-existing user', async () => {
-    expect(
+    await expect(
       showProfile.execute({
         user_id: 'non-existing-user-id',
       }),
