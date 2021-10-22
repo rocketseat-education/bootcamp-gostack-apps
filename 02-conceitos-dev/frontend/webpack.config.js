@@ -7,7 +7,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000
   },
   module: {
     rules: [
